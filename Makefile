@@ -24,7 +24,7 @@ NML_FILE            ?= $(BASE_FILENAME).nml
 NFO_FILE            ?= $(BASE_FILENAME).nfo
 PNML_FILE           ?= $(BASE_FILENAME).pnml
 TAG_FILE            ?= custom_tags.txt
-DOC_FILE            ?= docs/readme.txt docs/license.txt docs/changelog.md
+DOC_FILE            ?= docs/readme.txt
 
 GRF_GENERATE        ?= $(BASE_FILENAME).grf
 NML_GENERATE        ?= $(BASE_FILENAME).nml
@@ -49,9 +49,8 @@ clean::
 	@-rm -rf ./generated/readme.txt
 
 # Documents
-doc: generated $(DOC_GENERATE) $(GRF_GENERATE)
-	@cp $(CP_FLAGS) ./docs/license.txt ./generated/license.txt
-	@cp $(CP_FLAGS) ./docs/changelog.md ./generated/changelog.md
+doc: generated $(GRF_GENERATE)
+	@cp $(CP_FLAGS) ./docs/changelog.md ./generated/changelog.txt
 clean::
 	@echo "[CLEAN DOC]"
 	@-rm -rf ./generated/*.txt
@@ -102,7 +101,7 @@ clean::
 bundle: bundle_tar
 bundle_tar: $(BUNDLE_FILES)
 	@echo "[BUNDLE TAR]"
-	@ tar -cf generated/$(DIR_NAME).tar generated/changelog.md generated/$(GRF_FILE) generated/license.txt generated/readme.txt --transform s/generated/$(DIR_NAME)/
+	@ tar -cf generated/$(DIR_NAME).tar generated/changelog.txt generated/$(GRF_FILE) generated/readme.txt --transform s/generated/$(DIR_NAME)/
 clean::
 	@echo "[CLEAN BUNDLE]"
 	@-rm -rf $(shell echo "$(REPO_NAME)*" | xargs | sed s/\ /_/g)
@@ -111,9 +110,3 @@ clean::
 clean::
 	@-rm -rf ./.nmlcache
 	@-rm -rf ./src/__pycache__
-
-# Install (Temporarily used for developments)
-# dev: build
-# 	@cp -r ./generated/$(DIR_NAME).tar /mnt/d/Games/OpenTTD/Nightly/newgrf/Korean_Train_Set-dev.tar
-# clean::
-# 	@-rm -rf /mnt/d/Games/OpenTTD/Nightly/newgrf/Korean_Train_Set-dev.tar
