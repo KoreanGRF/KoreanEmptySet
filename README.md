@@ -35,7 +35,7 @@ And you need to deal with some git command.
  2. Modify **_./docs/license.txt_** and **_./docs/readme.ptxt_** as you wish
  3. Rename **_ko_empty_set.pnml_** into the **_(BASE_FILENAME).grf_**  
     For example, if ``BASE_FILENAME`` is _ko_test_set_, then rename it into **_ko_test_set.grf_**.  
- 4. Write your code in **_ko_test_set.grf_**.  
+ 4. Write your code in **_ko_test_set.pnml_**.  
     You may put some other _.pnml_ files by creating some directories, such as ``src``.  
 	Then you may include it by ``#include "./src/some_file_name.pnml"`` syntax.
  5. Run ``make all`` in the shell. Then compiled **_ko_test_set.tar_** tar file generated in **_./generated/_** directory.
