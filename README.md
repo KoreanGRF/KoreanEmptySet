@@ -15,7 +15,7 @@ And you need to deal with some git command.
     # File name of *.grf, *.tar and so on
     BASE_FILENAME       ?= ko_empty_set
     
-    # Versin
+    # Version
     VERSION             ?= $(shell ./findversion.sh)
     RECENT_UPDATED      ?= $(shell date +"%Y.%m.%d")
     REPO_BRANCH_VERSION ?= 0
