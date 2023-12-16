@@ -3,8 +3,8 @@
 **Korean Empty Set** is a template for Korean NewGRF sets.
 
 # Requires
-You need Linux bash shell or WSL to make your NewGRF project by using this template.
-And you need to deal with some git command.
+You need to use the Linux bash shell or WSL to make your NewGRF project by using this template.
+And you need to deal with some git commands.
 
 # How to use
  1. Modify ``Makefile.config``. Do not modify other variables if there is no certain purpose.
